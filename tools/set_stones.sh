@@ -1,0 +1,15 @@
+#!/bin/bash
+PARAM=''
+PATERN=' -- '
+ADDR_HEAD=172.17.0.
+SPACE=' '
+PORT=:80
+HOST_PORT_HEAD=18
+
+for i in `seq 103 280`
+do
+  ADDR=`expr $i - 99`
+  PARAM=$PARAM$PATERN$ADDR_HEAD$ADDR$PORT$SPACE$HOST_PORT_HEAD$i
+  echo $PARAM
+done
+stone -d $PARAM
